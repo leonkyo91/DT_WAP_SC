@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05E6607A-7E3C-426A-8D68-B1618AD82B6B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DT_WAP_SC</RootNamespace>
+    <AssemblyName>DT_WAP_SC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HslCommunication, Version=7.0.1.0, Culture=neutral, PublicKeyToken=cdb2261fa039ed67, processorArchitecture=MSIL">
+      <HintPath>packages\HslCommunication.7.0.1\lib\net451\HslCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>packages\NLog.4.6.7\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.Kernel32, Version=0.5.0.0, Culture=neutral, PublicKeyToken=9e300f9f87f04a7a, processorArchitecture=MSIL">
+      <HintPath>packages\PInvoke.Kernel32.0.5.184\lib\net45\PInvoke.Kernel32.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.Windows.Core, Version=0.5.0.0, Culture=neutral, PublicKeyToken=9e300f9f87f04a7a, processorArchitecture=MSIL">
+      <HintPath>packages\PInvoke.Windows.Core.0.5.184\lib\net35\PInvoke.Windows.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="StoneUtility">
+      <HintPath>packages\StoneUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CmdCode\Cmd01.cs" />
+    <Compile Include="CmdCode\Cmd02.cs" />
+    <Compile Include="CmdCode\Cmd03.cs" />
+    <Compile Include="CmdCode\Cmd04.cs" />
+    <Compile Include="CmdCode\Cmd05.cs" />
+    <Compile Include="CmdCode\Cmd06.cs" />
+    <Compile Include="CmdCode\Cmd10.cs" />
+    <Compile Include="CmdCode\Cmd23.cs" />
+    <Compile Include="CmdCode\Cmd24.cs" />
+    <Compile Include="CmdCode\Cmd26.cs" />
+    <Compile Include="CmdCode\Cmd30.cs" />
+    <Compile Include="CmdCode\Cmd35.cs" />
+    <Compile Include="CmdCode\Cmd40.cs" />
+    <Compile Include="CmdCode\Cmd42.cs" />
+    <Compile Include="CmdCode\Cmd50.cs" />
+    <Compile Include="ConnectStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConnectStatus.Designer.cs">
+      <DependentUpon>ConnectStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManualCmd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManualCmd.Designer.cs">
+      <DependentUpon>FormManualCmd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCmd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCmd.Designer.cs">
+      <DependentUpon>FormCmd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewLook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewLook.Designer.cs">
+      <DependentUpon>FormNewLook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTextMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTextMsg.Designer.cs">
+      <DependentUpon>FormTextMsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBankCmd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBankCmd.Designer.cs">
+      <DependentUpon>FormBankCmd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ICommon\Enmu.cs" />
+    <Compile Include="ICommon\Equipment.cs" />
+    <Compile Include="ICommon\IProtocol.cs" />
+    <Compile Include="ICommon\ITransfer.cs" />
+    <Compile Include="ICommon\MsgEventArg.cs" />
+    <Compile Include="ICommon\MsgHandler.cs" />
+    <Compile Include="ICommon\MsgModel.cs" />
+    <Compile Include="ICommon\TcpConnect.cs" />
+    <Compile Include="Vcs\ER01.cs" />
+    <Compile Include="Vcs\ER01_reply.cs" />
+    <Compile Include="Vcs\ER02.cs" />
+    <Compile Include="Vcs\ER02_reply.cs" />
+    <Compile Include="Vcs\ER03.cs" />
+    <Compile Include="Vcs\ER03_reply.cs" />
+    <Compile Include="Vcs\ER04.cs" />
+    <Compile Include="Vcs\ER04_reply.cs" />
+    <Compile Include="Vcs\ES01.cs" />
+    <Compile Include="Vcs\ES01_reply.cs" />
+    <Compile Include="Vcs\ES02.cs" />
+    <Compile Include="Vcs\ES02_reply.cs" />
+    <Compile Include="Vcs\ES03.cs" />
+    <Compile Include="Vcs\ES03_reply.cs" />
+    <Compile Include="Vcs\HC01.cs" />
+    <Compile Include="Vcs\HC01_reply.cs" />
+    <Compile Include="Vcs\HC02.cs" />
+    <Compile Include="Vcs\HC02_reply.cs" />
+    <Compile Include="Vcs\HC03.cs" />
+    <Compile Include="Vcs\HC03_reply.cs" />
+    <Compile Include="Vcs\HC04.cs" />
+    <Compile Include="Vcs\HC04_reply.cs" />
+    <Compile Include="Vcs\HC05.cs" />
+    <Compile Include="Vcs\HC05_reply.cs" />
+    <Compile Include="Vcs\HC06.cs" />
+    <Compile Include="Vcs\HC06_reply.cs" />
+    <Compile Include="Vcs\HC07.cs" />
+    <Compile Include="Vcs\HC07_reply.cs" />
+    <Compile Include="Vcs\HC08.cs" />
+    <Compile Include="Vcs\HC08_reply.cs" />
+    <Compile Include="Vcs\HC09.cs" />
+    <Compile Include="Vcs\HC09_reply.cs" />
+    <Compile Include="Vcs\VcsHandler.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConnectStatus.resx">
+      <DependentUpon>ConnectStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManualCmd.resx">
+      <DependentUpon>FormManualCmd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCmd.resx">
+      <DependentUpon>FormCmd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewLook.resx">
+      <DependentUpon>FormNewLook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTextMsg.resx">
+      <DependentUpon>FormTextMsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBankCmd.resx">
+      <DependentUpon>FormBankCmd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Content Include="DLL\clsDB_C.dll" />
+    <Content Include="DLL\clsErrDef.dll" />
+    <Content Include="DLL\clsLog.dll" />
+    <Content Include="DLL\Oracle.ManagedDataAccess.dll" />
+    <Content Include="DLL\System.Data.SQLite.dll" />
+    <Content Include="DLL\System.Data.SQLite.EF6.dll" />
+    <Content Include="DLL\System.Data.SQLite.Linq.dll" />
+    <Content Include="DLL\x64\SQLite.Interop.dll" />
+    <Content Include="DLL\x86\SQLite.Interop.dll" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
