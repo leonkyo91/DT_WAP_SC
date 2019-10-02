@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Mirle.Library;
 
 namespace DT_WAP_SC
 {
@@ -14,6 +15,9 @@ namespace DT_WAP_SC
         [STAThread]
         static void Main()
         {
+            clsInitSys.funCheckProcess();
+            clsInitSys.funInitSystem();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormNewLook());

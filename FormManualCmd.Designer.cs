@@ -52,12 +52,13 @@
             this.tableLayoutPanel1.Controls.Add(this.btnClose, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(532, 553);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(399, 442);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
@@ -65,10 +66,12 @@
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox1, 3);
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.SetRowSpan(this.groupBox1, 2);
-            this.groupBox1.Size = new System.Drawing.Size(526, 512);
+            this.groupBox1.Size = new System.Drawing.Size(395, 410);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manual Cmd";
@@ -81,29 +84,31 @@
             this.tableLayoutPanel2.Controls.Add(this.txtFunctionname, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.grdData, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 21);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 17);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(520, 488);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(391, 391);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // txtFunctionname
             // 
             this.txtFunctionname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFunctionname.Location = new System.Drawing.Point(176, 3);
+            this.txtFunctionname.Location = new System.Drawing.Point(132, 2);
+            this.txtFunctionname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFunctionname.Name = "txtFunctionname";
             this.txtFunctionname.ReadOnly = true;
-            this.txtFunctionname.Size = new System.Drawing.Size(341, 25);
+            this.txtFunctionname.Size = new System.Drawing.Size(257, 22);
             this.txtFunctionname.TabIndex = 0;
             // 
             // grdData
@@ -117,13 +122,14 @@
             this.grdData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.grdData.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.grdData.Location = new System.Drawing.Point(3, 33);
+            this.grdData.Location = new System.Drawing.Point(2, 26);
+            this.grdData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grdData.MultiSelect = false;
             this.grdData.Name = "grdData";
             this.grdData.RowHeadersWidth = 51;
             this.tableLayoutPanel2.SetRowSpan(this.grdData, 4);
             this.grdData.RowTemplate.Height = 27;
-            this.grdData.Size = new System.Drawing.Size(514, 452);
+            this.grdData.Size = new System.Drawing.Size(387, 363);
             this.grdData.TabIndex = 1;
             this.grdData.DataSourceChanged += new System.EventHandler(this.GrdData_DataSourceChanged);
             this.grdData.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.GrdData_ColumnAdded);
@@ -135,10 +141,10 @@
             this.btnSent.CustomerInformation = "";
             this.btnSent.EnableColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
             this.btnSent.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.btnSent.Location = new System.Drawing.Point(311, 523);
-            this.btnSent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSent.Location = new System.Drawing.Point(233, 418);
+            this.btnSent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSent.Name = "btnSent";
-            this.btnSent.Size = new System.Drawing.Size(104, 25);
+            this.btnSent.Size = new System.Drawing.Size(78, 20);
             this.btnSent.TabIndex = 1;
             this.btnSent.UIText = "Sent";
             this.btnSent.Click += new System.EventHandler(this.BtnSent_Click);
@@ -150,20 +156,21 @@
             this.btnClose.CustomerInformation = "";
             this.btnClose.EnableColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
             this.btnClose.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.btnClose.Location = new System.Drawing.Point(424, 523);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Location = new System.Drawing.Point(318, 418);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(104, 25);
+            this.btnClose.Size = new System.Drawing.Size(78, 20);
             this.btnClose.TabIndex = 2;
             this.btnClose.UIText = "Close";
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // FormManualCmd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 553);
+            this.ClientSize = new System.Drawing.Size(399, 442);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormManualCmd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Info";

@@ -71,12 +71,13 @@
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(532, 553);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(399, 442);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnClose
@@ -86,10 +87,10 @@
             this.btnClose.CustomerInformation = "";
             this.btnClose.EnableColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
             this.btnClose.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.btnClose.Location = new System.Drawing.Point(424, 523);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Location = new System.Drawing.Point(318, 418);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(104, 25);
+            this.btnClose.Size = new System.Drawing.Size(78, 20);
             this.btnClose.TabIndex = 0;
             this.btnClose.UIText = "Close";
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
@@ -101,10 +102,10 @@
             this.btnSent.CustomerInformation = "";
             this.btnSent.EnableColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
             this.btnSent.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.btnSent.Location = new System.Drawing.Point(312, 523);
-            this.btnSent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSent.Location = new System.Drawing.Point(233, 418);
+            this.btnSent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSent.Name = "btnSent";
-            this.btnSent.Size = new System.Drawing.Size(104, 25);
+            this.btnSent.Size = new System.Drawing.Size(78, 20);
             this.btnSent.TabIndex = 1;
             this.btnSent.UIText = "Sent";
             this.btnSent.Click += new System.EventHandler(this.BtnSent_Click);
@@ -114,10 +115,12 @@
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox1, 3);
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.SetRowSpan(this.groupBox1, 2);
-            this.groupBox1.Size = new System.Drawing.Size(526, 512);
+            this.groupBox1.Size = new System.Drawing.Size(395, 410);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info";
@@ -150,10 +153,11 @@
             this.tableLayoutPanel2.Controls.Add(this.txtTBase, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 21);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 17);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 13;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -164,18 +168,19 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(520, 488);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(391, 391);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 289);
+            this.label8.Location = new System.Drawing.Point(2, 232);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 15);
+            this.label8.Size = new System.Drawing.Size(60, 12);
             this.label8.TabIndex = 14;
             this.label8.Text = "ShelfHeight";
             // 
@@ -183,18 +188,20 @@
             // 
             this.txtTLayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTLayer.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtTLayer.Location = new System.Drawing.Point(176, 161);
+            this.txtTLayer.Location = new System.Drawing.Point(132, 128);
+            this.txtTLayer.Margin = new System.Windows.Forms.Padding(2);
             this.txtTLayer.Name = "txtTLayer";
-            this.txtTLayer.Size = new System.Drawing.Size(341, 25);
+            this.txtTLayer.Size = new System.Drawing.Size(257, 22);
             this.txtTLayer.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 166);
+            this.label4.Location = new System.Drawing.Point(2, 133);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 15);
+            this.label4.Size = new System.Drawing.Size(48, 12);
             this.label4.TabIndex = 6;
             this.label4.Text = "To Layer";
             // 
@@ -202,9 +209,10 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 43);
+            this.label1.Location = new System.Drawing.Point(2, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 15);
+            this.label1.Size = new System.Drawing.Size(60, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "From Layer";
             // 
@@ -212,9 +220,10 @@
             // 
             this.txtFLayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFLayer.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtFLayer.Location = new System.Drawing.Point(176, 38);
+            this.txtFLayer.Location = new System.Drawing.Point(132, 29);
+            this.txtFLayer.Margin = new System.Windows.Forms.Padding(2);
             this.txtFLayer.Name = "txtFLayer";
-            this.txtFLayer.Size = new System.Drawing.Size(341, 25);
+            this.txtFLayer.Size = new System.Drawing.Size(257, 22);
             this.txtFLayer.TabIndex = 1;
             this.txtFLayer.Text = "00";
             // 
@@ -222,28 +231,31 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(136, 7);
+            this.label7.Location = new System.Drawing.Point(102, 6);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 15);
+            this.label7.Size = new System.Drawing.Size(26, 12);
             this.label7.TabIndex = 12;
             this.label7.Text = "EQP";
             // 
             // txtEQP
             // 
             this.txtEQP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEQP.Location = new System.Drawing.Point(176, 3);
+            this.txtEQP.Location = new System.Drawing.Point(132, 2);
+            this.txtEQP.Margin = new System.Windows.Forms.Padding(2);
             this.txtEQP.Name = "txtEQP";
             this.txtEQP.ReadOnly = true;
-            this.txtEQP.Size = new System.Drawing.Size(341, 25);
+            this.txtEQP.Size = new System.Drawing.Size(257, 22);
             this.txtEQP.TabIndex = 13;
             // 
             // label9
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 330);
+            this.label9.Location = new System.Drawing.Point(2, 265);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 15);
+            this.label9.Size = new System.Drawing.Size(58, 12);
             this.label9.TabIndex = 15;
             this.label9.Text = "ShelfWidth";
             // 
@@ -251,9 +263,10 @@
             // 
             this.txtshelfheight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtshelfheight.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtshelfheight.Location = new System.Drawing.Point(176, 284);
+            this.txtshelfheight.Location = new System.Drawing.Point(132, 227);
+            this.txtshelfheight.Margin = new System.Windows.Forms.Padding(2);
             this.txtshelfheight.Name = "txtshelfheight";
-            this.txtshelfheight.Size = new System.Drawing.Size(341, 25);
+            this.txtshelfheight.Size = new System.Drawing.Size(257, 22);
             this.txtshelfheight.TabIndex = 16;
             this.txtshelfheight.Text = "0";
             // 
@@ -261,9 +274,10 @@
             // 
             this.txtshelfwidth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtshelfwidth.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtshelfwidth.Location = new System.Drawing.Point(176, 325);
+            this.txtshelfwidth.Location = new System.Drawing.Point(132, 260);
+            this.txtshelfwidth.Margin = new System.Windows.Forms.Padding(2);
             this.txtshelfwidth.Name = "txtshelfwidth";
-            this.txtshelfwidth.Size = new System.Drawing.Size(341, 25);
+            this.txtshelfwidth.Size = new System.Drawing.Size(257, 22);
             this.txtshelfwidth.TabIndex = 17;
             this.txtshelfwidth.Text = "0";
             // 
@@ -271,9 +285,10 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 371);
+            this.label10.Location = new System.Drawing.Point(2, 298);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 15);
+            this.label10.Size = new System.Drawing.Size(45, 12);
             this.label10.TabIndex = 18;
             this.label10.Text = "Platform";
             // 
@@ -281,9 +296,10 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 412);
+            this.label11.Location = new System.Drawing.Point(2, 331);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(30, 15);
+            this.label11.Size = new System.Drawing.Size(23, 12);
             this.label11.TabIndex = 19;
             this.label11.Text = "Pier";
             // 
@@ -291,9 +307,10 @@
             // 
             this.txtPlatform.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPlatform.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtPlatform.Location = new System.Drawing.Point(176, 366);
+            this.txtPlatform.Location = new System.Drawing.Point(132, 293);
+            this.txtPlatform.Margin = new System.Windows.Forms.Padding(2);
             this.txtPlatform.Name = "txtPlatform";
-            this.txtPlatform.Size = new System.Drawing.Size(341, 25);
+            this.txtPlatform.Size = new System.Drawing.Size(257, 22);
             this.txtPlatform.TabIndex = 20;
             this.txtPlatform.Text = "0000";
             // 
@@ -301,9 +318,10 @@
             // 
             this.txtPier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPier.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtPier.Location = new System.Drawing.Point(176, 407);
+            this.txtPier.Location = new System.Drawing.Point(132, 326);
+            this.txtPier.Margin = new System.Windows.Forms.Padding(2);
             this.txtPier.Name = "txtPier";
-            this.txtPier.Size = new System.Drawing.Size(341, 25);
+            this.txtPier.Size = new System.Drawing.Size(257, 22);
             this.txtPier.TabIndex = 21;
             this.txtPier.Text = "0000";
             // 
@@ -311,9 +329,10 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 125);
+            this.label2.Location = new System.Drawing.Point(2, 100);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 15);
+            this.label2.Size = new System.Drawing.Size(55, 12);
             this.label2.TabIndex = 1;
             this.label2.Text = "From Row";
             // 
@@ -321,9 +340,10 @@
             // 
             this.txtFRow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFRow.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtFRow.Location = new System.Drawing.Point(176, 120);
+            this.txtFRow.Location = new System.Drawing.Point(132, 95);
+            this.txtFRow.Margin = new System.Windows.Forms.Padding(2);
             this.txtFRow.Name = "txtFRow";
-            this.txtFRow.Size = new System.Drawing.Size(341, 25);
+            this.txtFRow.Size = new System.Drawing.Size(257, 22);
             this.txtFRow.TabIndex = 3;
             this.txtFRow.Text = "00";
             // 
@@ -331,9 +351,10 @@
             // 
             this.txtFBase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFBase.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtFBase.Location = new System.Drawing.Point(176, 79);
+            this.txtFBase.Location = new System.Drawing.Point(132, 62);
+            this.txtFBase.Margin = new System.Windows.Forms.Padding(2);
             this.txtFBase.Name = "txtFBase";
-            this.txtFBase.Size = new System.Drawing.Size(341, 25);
+            this.txtFBase.Size = new System.Drawing.Size(257, 22);
             this.txtFBase.TabIndex = 2;
             this.txtFBase.Text = "00";
             // 
@@ -341,9 +362,10 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 84);
+            this.label3.Location = new System.Drawing.Point(2, 67);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 15);
+            this.label3.Size = new System.Drawing.Size(55, 12);
             this.label3.TabIndex = 4;
             this.label3.Text = "From Base";
             // 
@@ -351,9 +373,10 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 248);
+            this.label5.Location = new System.Drawing.Point(2, 199);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 15);
+            this.label5.Size = new System.Drawing.Size(43, 12);
             this.label5.TabIndex = 7;
             this.label5.Text = "To Row";
             // 
@@ -361,36 +384,40 @@
             // 
             this.txtTRow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTRow.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtTRow.Location = new System.Drawing.Point(176, 243);
+            this.txtTRow.Location = new System.Drawing.Point(132, 194);
+            this.txtTRow.Margin = new System.Windows.Forms.Padding(2);
             this.txtTRow.Name = "txtTRow";
-            this.txtTRow.Size = new System.Drawing.Size(341, 25);
+            this.txtTRow.Size = new System.Drawing.Size(257, 22);
             this.txtTRow.TabIndex = 6;
             // 
             // txtTBase
             // 
             this.txtTBase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTBase.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtTBase.Location = new System.Drawing.Point(176, 202);
+            this.txtTBase.Location = new System.Drawing.Point(132, 161);
+            this.txtTBase.Margin = new System.Windows.Forms.Padding(2);
             this.txtTBase.Name = "txtTBase";
-            this.txtTBase.Size = new System.Drawing.Size(341, 25);
+            this.txtTBase.Size = new System.Drawing.Size(257, 22);
             this.txtTBase.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 207);
+            this.label6.Location = new System.Drawing.Point(2, 166);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 15);
+            this.label6.Size = new System.Drawing.Size(43, 12);
             this.label6.TabIndex = 8;
             this.label6.Text = "To Base";
             // 
             // FormCmd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 553);
+            this.ClientSize = new System.Drawing.Size(399, 442);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormCmd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Move";

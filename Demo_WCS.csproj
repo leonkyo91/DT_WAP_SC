@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="clsDB_C, Version=1.6.1811.1, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="clsErrDef, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="clsLog, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="HslCommunication, Version=7.0.1.0, Culture=neutral, PublicKeyToken=cdb2261fa039ed67, processorArchitecture=MSIL">
       <HintPath>packages\HslCommunication.7.0.1\lib\net451\HslCommunication.dll</HintPath>
     </Reference>
@@ -126,6 +129,7 @@
     <Compile Include="FormBankCmd.Designer.cs">
       <DependentUpon>FormBankCmd.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinPLCCommu\clsTraceLogEventArgs.cs" />
     <Compile Include="ICommon\Enmu.cs" />
     <Compile Include="ICommon\Equipment.cs" />
     <Compile Include="ICommon\IProtocol.cs" />
@@ -169,6 +173,10 @@
     <Compile Include="Vcs\VcsHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinPLCCommu\frmWinPLCCommu_funShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <None Include="Resources\Mirle Logo1.jpg" />
     <EmbeddedResource Include="ConnectStatus.resx">
       <DependentUpon>ConnectStatus.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +203,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="DLL\clsDB_C.dll" />
     <Content Include="DLL\clsErrDef.dll" />
@@ -225,6 +234,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="WinPLCCommu\clsDef\clsDef.csproj">
+      <Project>{6c03414d-f6e0-4c9d-8c71-e0b35a788e38}</Project>
+      <Name>clsDef</Name>
+    </ProjectReference>
+    <ProjectReference Include="WinPLCCommu\clsIniSys\clsIniSys.csproj">
+      <Project>{3d90de02-de2f-417e-851f-4a5a1e69e337}</Project>
+      <Name>clsIniSys</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

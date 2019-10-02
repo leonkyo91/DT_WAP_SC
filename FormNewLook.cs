@@ -18,11 +18,20 @@ using mirle.stone.utility;
 using System.IO;
 using Vcs;
 using System.Runtime.InteropServices;
+using Mirle.Library;
+using System.Reflection;
+
 
 namespace DT_WAP_SC
 {
     public partial class FormNewLook : Form
     {
+        #region Leon Add
+        private delegate void delShowSystemTrace(ListBox TraceListBox, clsTraceLogEventArgs TraceLog, bool WriteLog);
+        private clsTraceLogEventArgs strLastSystemTraceLog = new clsTraceLogEventArgs(enuTraceLog.System);
+        private clsTraceLogEventArgs strLastMPLCTraceLog = new clsTraceLogEventArgs(enuTraceLog.MPLC);
+        #endregion Leon Add
+
         private string _sc_ip = string.Empty;
         private string _sc_port = string.Empty;
         private string _bytesize = string.Empty;
@@ -59,6 +68,9 @@ namespace DT_WAP_SC
         Thread charge;
         Thread work;
         private enum E { waiting = 1, connected = 2, display = 3, disconnected = 4 };
+        #region Leon Add
+        private System.Windows.Forms.Timer timRefresh = new System.Windows.Forms.Timer();
+        #endregion Leon Add
         public FormNewLook()
         {
             InitializeComponent();
@@ -68,6 +80,13 @@ namespace DT_WAP_SC
         {
             try
             {
+                #region Leon Add
+                this.Text = "Mirle AS/RS System Communication" + " (V." + Application.ProductVersion + ")";
+                //btnAutoPause.Text = "Pause";
+                //bolAutoPaseFlag = true;
+                funInitTimer();
+                #endregion Leon Add
+
                 LoadConfig();
                 tcp.RefreshMessageInfo += new EventHandler<MsgEventArg>(RefreshMsgInfo);
                 tcp.ReceiveMsg += new EventHandler<MsgEventArg>(RecevieMsg);
@@ -1922,6 +1941,326 @@ namespace DT_WAP_SC
 
         }
 
-        
+        private void groupBox10_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 初始化RefreshTimer
+        /// </summary>
+        private void funInitTimer()
+        {
+            timRefresh.Stop();
+            timRefresh.Tick += new EventHandler(timRefresh_Tick);
+            timRefresh.Interval = 500;
+            timRefresh.Start();
+
+            // 暫時不用 By Leon
+            //timProgram.Stop();
+            //timProgram.Elapsed += new System.Timers.ElapsedEventHandler(timProgram_Elapsed);
+            //timProgram.Interval = 3000;
+            //timProgram.Start();
+
+            // 暫時不用 By Leon
+            //timProgram_2.Stop();
+            //timProgram_2.Elapsed += new System.Timers.ElapsedEventHandler(timProgram_2_Elapsed);
+            //timProgram_2.Interval = 1000;
+            //timProgram_2.Start();
+
+            // 暫時不用 By Leon
+            //timProgram_3.Stop();
+            //timProgram_3.Elapsed += new System.Timers.ElapsedEventHandler(timProgram_3_Elapsed);
+            //timProgram_3.Interval = 1000;
+            //timProgram_3.Start();
+        }
+
+        /// <summary>
+        /// 表示 timRefresh 觸發 Tick 事件處理方法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timRefresh_Tick(object sender, EventArgs e)
+        {
+            timRefresh.Stop();
+
+            try
+            {
+                lblDateTime.Text = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss:fff");
+
+                #region DB、PLC連線狀態
+                funShowConnect(clsSystem.gobjDB.ConnFlag, ref lblDBSts);
+                //funShowConnect(clsSystem.gobjPLC.ConnectionFlag, ref lblMPLC1Sts);
+                //funShowConnect(clsSystem.gobjPLC2.ConnectionFlag, ref lblMPLC2Sts);
+                //funShowConnect(clsSystem.gobjPLC3.ConnectionFlag, ref lblMPLC3Sts);
+                #endregion DB、PLC連線狀態
+                //if (clsSystem.gobjPLC.ConnectionFlag)
+                //{
+                //    if (!timProgram.Enabled)
+                //        timProgram.Start();
+                //}
+                //else
+                //{
+                //    timProgram.Stop();
+                //}
+                //if (clsSystem.gobjPLC2.ConnectionFlag)
+                //{
+                //    if(!timProgram_2.Enabled)
+                //        timProgram_2.Start();
+                //}
+                //else
+                //{
+                //    timProgram_2.Stop();
+                //}
+                //if (clsSystem.gobjPLC3.ConnectionFlag)
+                //{
+                //    if (!timProgram_3.Enabled)
+                //        timProgram_3.Start();
+                //}
+                //else
+                //{
+                //    timProgram_3.Stop();
+                //}
+                #region  更新Crane Mode/Sts
+                if (clsSystem.intBegin == 0)
+                {
+                    funReadCraneMode();
+                    funReadCraneSts();
+                }
+                #endregion  更新Crane Mode/Sts
+
+                #region Auto Reconnect
+                if (!chkAutoReconnect.Checked)
+                {
+                    btnReconnectDB.Enabled = !clsSystem.gobjDB.ConnFlag;
+//                    btnReconnectPLC.Enabled = !clsSystem.gobjPLC.ConnectionFlag;
+                }
+                #endregion Auto Reconnect
+
+                #region WriteAutoRun--註解
+                //funWriteAutoRunBit("A01", chkAutoRunTest.Checked);
+                //funWriteAutoRunBit("A02", chkAutoRunTest.Checked);
+                //funWriteAutoRunBit("A03", chkAutoRunTest.Checked);
+                //funWriteAutoRunBit("D04", chkAutoRunTest.Checked);
+                #endregion WriteAutoRun
+
+                #region HandShaking & Set PLC DateTime
+                //if (clsSystem.gobjPLC.ConnectionFlag)
+                //{
+                //    if (!objBufferData.HandShaking)
+                //        funWritePC2PLC_HandShake("1", 1);
+                //    else
+                //        funWritePC2PLC_HandShake("0", 1);
+
+                //    funWritePLCSetDateTime(1);
+                //}
+                //if (clsSystem.gobjPLC2.ConnectionFlag)
+                //{
+                //    if (!objBufferData.HandShaking)
+                //        funWritePC2PLC_HandShake("1", 2);
+                //    else
+                //        funWritePC2PLC_HandShake("0", 2);
+
+                //    funWritePLCSetDateTime(2);
+                //}
+                if (clsSystem.gobjPLC3.ConnectionFlag)
+                {
+                    //if (!objBufferData.HandShaking)
+                    //    funWritePC2PLC_HandShake("1", 3);
+                    //else
+                    //    funWritePC2PLC_HandShake("0", 3);
+
+                    //funWritePLCSetDateTime(3);
+                }
+                #endregion HandShaking & Set PLC DateTime
+
+                #region 檢查是否有做完的命令並Update字幕機Table
+
+
+
+                #endregion 檢查是否有做完的命令並Update字幕機Table
+
+                #region Release 暫存儲位
+
+                #endregion Release 暫存儲位
+
+                #region 站對站
+                // funStnToStn();
+                #endregion 站對站
+            }
+            catch (Exception ex)
+            {
+                var varObject = MethodBase.GetCurrentMethod();
+                clsSystem.funWriteExceptionLog(varObject.DeclaringType.FullName, varObject.Name, ex.Message);
+            }
+            finally
+            {
+                timRefresh.Start();
+            }
+        }
+
+
+        /// <summary>
+        /// 表示顯示SystemTrace之方法
+        /// </summary>
+        /// <param name="TraceListBox"></param>
+        /// <param name="TraceLog"></param>
+        /// <param name="WriteLog"></param>
+        private void funShowSystemTrace(ListBox TraceListBox, clsTraceLogEventArgs TraceLog, bool WriteLog)
+        {
+            if (this.InvokeRequired)
+            {
+                delShowSystemTrace ShowSystemTrace = new delShowSystemTrace(funShowSystemTrace);
+                this.Invoke(ShowSystemTrace, TraceListBox, TraceLog, WriteLog);
+            }
+            else
+            {
+                try
+                {
+                    string strLogMessage = TraceLog.LogMessage.PadRight(35, ' ');
+                    switch (TraceLog.objTraceLog)
+                    {
+                        case enuTraceLog.System:
+                            #region System
+                            if (!string.IsNullOrWhiteSpace(TraceLog.BCRNo))
+                            {
+                                #region BCR相關
+                                strLogMessage += " => BCRNo:<" + TraceLog.BCRNo + "> ";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.BCRSts))
+                                    strLogMessage += "BCRSts:<" + TraceLog.BCRSts + "> ";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.BCRID))
+                                    strLogMessage += "BCRID:<" + TraceLog.BCRID + "> ";
+                                #endregion BCR相關
+                            }
+                            else if (!string.IsNullOrWhiteSpace(TraceLog.LeftCmdSno) || !string.IsNullOrWhiteSpace(TraceLog.RightCmdSno))
+                            {
+                                #region CmdSno相關
+                                strLogMessage += " => CmdSno:<";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.LeftCmdSno) && !string.IsNullOrWhiteSpace(TraceLog.RightCmdSno))
+                                    strLogMessage += TraceLog.LeftCmdSno + ", " + TraceLog.RightCmdSno + "> ";
+                                else if (!string.IsNullOrWhiteSpace(TraceLog.LeftCmdSno))
+                                    strLogMessage += TraceLog.LeftCmdSno + "> ";
+                                else if (!string.IsNullOrWhiteSpace(TraceLog.RightCmdSno))
+                                    strLogMessage += TraceLog.RightCmdSno + "> ";
+                                else
+                                    strLogMessage += "> ";
+
+                                if (!string.IsNullOrWhiteSpace(TraceLog.SNO))
+                                    strLogMessage += "SNO:<" + TraceLog.SNO + "> ";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.CmdSts))
+                                    strLogMessage += "CmdSts:<" + TraceLog.CmdSts + "> ";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.CmdMode))
+                                    strLogMessage += "CmdMode:<" + TraceLog.CmdMode + "> ";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.Trace))
+                                    strLogMessage += "Trace:<" + TraceLog.Trace + "> ";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.StnNo))
+                                    strLogMessage += "StnNo:<" + TraceLog.StnNo + "> ";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.CmdCraneNo))
+                                    strLogMessage += "CmdCraneNo:<" + TraceLog.CmdCraneNo + "> ";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.LocID))
+                                    strLogMessage += "LocID:<" + TraceLog.LocID + "> ";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.NewLocID))
+                                    strLogMessage += "NewLocID:<" + TraceLog.NewLocID + "> ";
+                                #endregion CmdSno相關
+                            }
+                            else if (!string.IsNullOrWhiteSpace(TraceLog.CraneNo))
+                            {
+                                #region Crane相關
+                                strLogMessage += " => CraneNo:<" + TraceLog.CraneNo + "> ";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.CraneSts))
+                                    strLogMessage += "CraneSts:<" + TraceLog.CraneSts + "> ";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.CraneStsLast))
+                                    strLogMessage += "CraneStsLast:<" + TraceLog.CraneStsLast + "> ";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.CraneMode))
+                                    strLogMessage += "CraneMode:<" + TraceLog.CraneMode + "> ";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.CraneModeLast))
+                                    strLogMessage += "CraneModeLast:<" + TraceLog.CraneModeLast + "> ";
+                                #endregion Crane相關
+                            }
+                            else if (!string.IsNullOrWhiteSpace(TraceLog.LocSts))
+                            {
+                                #region LocSts相關
+                                strLogMessage += " => Loc:<" + TraceLog.LocID + "> ";
+                                strLogMessage += "LocSts:<" + TraceLog.LocSts + "> ";
+                                strLogMessage += "OldLocSts:<" + TraceLog.OldLocSts + "> ";
+                                #endregion LocSts相關
+                            }
+
+                            if (strLastSystemTraceLog.LogMessage != TraceLog.LogMessage)
+                            {
+                                if (TraceListBox.Items.Count > 200)
+                                    TraceListBox.Items.RemoveAt(0);
+
+                                TraceListBox.Items.Add("[" + DateTime.Now.ToString("HH:mm:ss.fff") + "] " + strLogMessage);
+                                TraceListBox.SelectedIndex = TraceListBox.Items.Count - 1;
+                                strLastSystemTraceLog = TraceLog;
+
+                                if (WriteLog)
+                                    clsSystem.funWriteSystemTraceLog(strLogMessage);
+                            }
+                            #endregion System
+                            break;
+                        case enuTraceLog.MPLC:
+                            #region MPLC
+                            if (!string.IsNullOrWhiteSpace(TraceLog.BufferName))
+                            {
+                                strLogMessage += " => BuffwerName:<" + TraceLog.BufferName + "> ";
+                                if (!string.IsNullOrWhiteSpace(TraceLog.AddressSection))
+                                    strLogMessage += "AddressSection:<" + TraceLog.AddressSection + "> ";
+                                if (TraceLog.PLCValues.Length > 0)
+                                    strLogMessage += "PLCValues:<" + string.Join(", ", TraceLog.PLCValues) + "> ";
+                            }
+
+                            if (strLastMPLCTraceLog.LogMessage != TraceLog.LogMessage)
+                            {
+                                if (TraceListBox.Items.Count > 200)
+                                    TraceListBox.Items.RemoveAt(0);
+
+                                TraceListBox.Items.Add("[" + DateTime.Now.ToString("HH:mm:ss.fff") + "] " + strLogMessage);
+                                TraceListBox.SelectedIndex = TraceListBox.Items.Count - 1;
+                                strLastMPLCTraceLog = TraceLog;
+
+                                if (WriteLog)
+                                    clsSystem.funWriteMPLCTraceLog(strLogMessage);
+                            }
+                            #endregion MPLC
+                            break;
+                        case enuTraceLog.Alarm:
+                            #region Alarm
+                            if (TraceLog.AlarmClear)
+                            {
+                                if (TraceListBox.Items.Contains(TraceLog.LogMessage))
+                                    TraceListBox.Items.Remove(TraceLog.LogMessage);
+
+                                if (WriteLog)
+                                    clsSystem.funWriteAlarmLog("Alarm Clear  => " + TraceLog.LogMessage);
+                            }
+                            else
+                            {
+                                if (!TraceListBox.Items.Contains(TraceLog.LogMessage))
+                                    TraceListBox.Items.Add(TraceLog.LogMessage);
+
+                                if (WriteLog)
+                                    clsSystem.funWriteAlarmLog("Alarm Set => " + TraceLog.LogMessage);
+                            }
+                            #endregion Alarm
+                            break;
+                        case enuTraceLog.SQL:
+                            if (WriteLog)
+                                clsSystem.funWriteAlarmLog("SQL => " + TraceLog.LogMessage);
+                            break;
+                        case enuTraceLog.None:
+
+                        default:
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    var varObject = MethodBase.GetCurrentMethod();
+                    clsSystem.funWriteExceptionLog(varObject.DeclaringType.FullName, varObject.Name, ex.Message);
+                }
+            }
+        }
     }
 }
